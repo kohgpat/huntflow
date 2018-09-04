@@ -20,7 +20,6 @@
 export default {
   name: 'VacancyShort',
   props: ["comments"],
-  components: {}
 }
 </script>
 

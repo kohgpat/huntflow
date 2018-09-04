@@ -33,7 +33,6 @@ import VacancyShortCommentForm from "./VacancyShortCommentForm.vue"
 
 export default {
   name: 'VacancyShort',
-  props: {},
   data: () => ({
     comments: [
       {

@@ -28,6 +28,7 @@ html {
 
 #app {
   font-family: 'Raleway', 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
   font-size: 1rem;
 }
 </style>

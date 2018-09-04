@@ -1,6 +1,6 @@
 <template>
   <ul class="vacancy-short-comments">
-    <li v-for="comment in comments" class="vacancy-short-comment">
+    <li v-for="comment in comments" v-bind:key="comment.id" class="vacancy-short-comment">
       <div class="vacancy-short-comment__comment">
         {{comment.comment}}
       </div>

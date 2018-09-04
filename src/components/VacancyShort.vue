@@ -20,13 +20,14 @@
     </header>
 
     <div class="vacancy-short-content">
-      <VacancyShortCommentForm />
+      <VacancyShortCommentForm v-bind:addComment="addComment" />
       <VacancyShortComments v-bind:comments="comments" />
     </div>
   </div>
 </template>
 
 <script>
+import nanoid from "nanoid"
 import Button from "./Button.vue"
 import VacancyShortComments from "./VacancyShortComments.vue"
 import VacancyShortCommentForm from "./VacancyShortCommentForm.vue"
@@ -34,6 +35,10 @@ import VacancyShortCommentForm from "./VacancyShortCommentForm.vue"
 export default {
   name: 'VacancyShort',
   data: () => ({
+    currentUser: {
+      id: 1,
+      name: "Василий Щерица"
+    },
     comments: [
       {
         id: 1,
@@ -55,6 +60,24 @@ export default {
       }
     ]
   }),
+  methods: {
+    addComment(commentText) {
+      const comment = {
+        id: nanoid(),
+        comment: commentText,
+        author: {
+          id: this.currentUser.id,
+          name: this.currentUser.name
+        },
+        created_at: "12 июля"
+      };
+
+      this.comments = [
+        comment,
+        ...this.comments,
+      ];
+    }
+  },
   components: {
     Button,
     VacancyShortComments,

@@ -1,5 +1,5 @@
 <template>
-  <form class="vacancy-short-comment-form">
+  <form class="vacancy-short-comment-form" @submit.prevent="save">
     <input
       type="text"
       name="comment"
@@ -38,11 +38,16 @@ export default {
   components: {
     Button
   },
+  props: ["addComment"],
   data: () => ({
     commentFocused: false,
     comment: ""
   }),
   methods: {
+    save() {
+      this.addComment(this.comment);
+      this.cancel();
+    },
     cancel() {
       this.comment = "";
       this.commentFocused = false;

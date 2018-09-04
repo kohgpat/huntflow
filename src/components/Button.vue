@@ -29,10 +29,17 @@ export default {
     font-size: 11px;
     line-height: 100%;
     text-transform: uppercase;
-    background-color: #f1f1f1;
-    border: 1px solid #f1f1f1;
+    background-color: #fff;
+    border: 1px solid #ccc;
     border-radius: 3px;
-    color: #000;
+    color: #38343F;
+  }
+
+  .button:disabled {
+    cursor: not-allowed;
+    background-color: #D6D6D6;
+    border: 1px solid #D6D6D6;
+    color: #fff;
   }
 
   .button--success {

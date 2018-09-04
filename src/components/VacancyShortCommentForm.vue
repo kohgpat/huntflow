@@ -12,7 +12,7 @@
 
     <div class="vacancy-short-comment-form__controls" v-if="commentFocused || comment.length">
       <Button
-        @disabled="!comment.length"
+        :disabled="!comment.length"
         variant="primary"
         class="vacancy-short-comment-form__control"
       >
@@ -47,9 +47,11 @@ export default {
       this.comment = "";
       this.commentFocused = false;
     }
-  }
+  },
   // computed: {
-  //   isControlsVisible: () => this.comment.length
+  //   isSaveDisabled() {
+  //     return !this.comment.length;
+  //   }
   // }
 }
 </script>

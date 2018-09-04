@@ -19,29 +19,7 @@
 <script>
 export default {
   name: 'VacancyShort',
-  data: () => ({
-    comments: [
-      {
-        id: 1,
-        comment: "Подумать",
-        author: {
-          id: 1,
-          name: "Василий Щерица"
-        },
-        created_at: "12 июля"
-      },
-      {
-        id: 2,
-        comment: "Взят в работу",
-        author: {
-          id: 2,
-          name: "Ольга Солошенко"
-        },
-        created_at: "11 июля"
-      }
-    ]
-  }),
-  props: {},
+  props: ["comments"],
   components: {}
 }
 </script>

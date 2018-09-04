@@ -1,6 +1,6 @@
 <template>
   <button v-bind:class="getClass">
-    {{ text }}
+    <slot></slot>
   </button>
 </template>
 
@@ -8,13 +8,16 @@
 export default {
   name: 'Button',
   props: {
-    text: String
+    variant: String
   },
   computed: {
-    getClass: () => ({
-      "button": true,
-      "button--default": true
-    })
+    getClass() {
+      return {
+        "button": true,
+        "button--primary": this.variant === "primary",
+        "button--success": this.variant === "success"
+      }
+    }
   }
 }
 </script>
@@ -32,9 +35,15 @@ export default {
     color: #000;
   }
 
-  .button--default {
+  .button--success {
     background-color: #7AC016;
     border: 1px solid #7AC016;
+    color: #fff;
+  }
+
+  .button--primary {
+    background-color: #22BBD2;
+    border: 1px solid #22BBD2;
     color: #fff;
   }
 </style>

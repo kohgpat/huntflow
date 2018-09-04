@@ -21,12 +21,14 @@
 
     <div class="vacancy-short-content">
       <VacancyShortCommentForm />
+      <VacancyShortComments />
     </div>
   </div>
 </template>
 
 <script>
 import Button from "./Button.vue"
+import VacancyShortComments from "./VacancyShortComments.vue"
 import VacancyShortCommentForm from "./VacancyShortCommentForm.vue"
 
 export default {
@@ -34,7 +36,8 @@ export default {
   props: {},
   components: {
     Button,
-    VacancyShortCommentForm
+    VacancyShortComments,
+    VacancyShortCommentForm,
   }
 }
 </script>

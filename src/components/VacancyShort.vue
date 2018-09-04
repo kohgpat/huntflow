@@ -12,20 +12,29 @@
       </div>
 
       <div class="vacancy-short-header__side vacancy-short-header__side--right">
-        <Button text="Сменить этап подбора" class="vacancy-short__change-position-control" />
+        <Button
+          class="vacancy-short__change-position-control" variant="success">
+          Сменить этап подбора
+        </Button>
       </div>
     </header>
+
+    <div class="vacancy-short-content">
+      <VacancyShortCommentForm />
+    </div>
   </div>
 </template>
 
 <script>
 import Button from "./Button.vue"
+import VacancyShortCommentForm from "./VacancyShortCommentForm.vue"
 
 export default {
   name: 'VacancyShort',
   props: {},
   components: {
-    Button
+    Button,
+    VacancyShortCommentForm
   }
 }
 </script>
@@ -35,7 +44,7 @@ export default {
     background-color: #FDFFEC;
     border-left: 4px solid #7AC016;
     border-radius: 3px;
-    padding: 15px 30px 9.1px 34px;
+    padding: 15px 30px 20px 34px;
     width: 504px;
   }
 
@@ -43,6 +52,7 @@ export default {
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding-bottom: 9px;
   }
 
   .vacancy-short-header__side {
@@ -63,7 +73,7 @@ export default {
     font-size: 18px;
     line-height: 22px;
     margin-top: 0;
-    margin-bottom: 6.2px;
+    margin-bottom: 6px;
     color: #7AC016;
   }
 

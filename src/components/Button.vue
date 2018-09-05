@@ -15,7 +15,8 @@ export default {
       return {
         button: true,
         "button--primary": this.variant === "primary",
-        "button--success": this.variant === "success"
+        "button--success": this.variant === "success",
+        "button--danger": this.variant === "danger",
       };
     }
   }
@@ -51,6 +52,12 @@ export default {
 .button--primary {
   background-color: #22bbd2;
   border: 1px solid #22bbd2;
+  color: #fff;
+}
+
+.button--danger {
+  background-color: #DB525E;
+  border: 1px solid #DB525E;
   color: #fff;
 }
 </style>

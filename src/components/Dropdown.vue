@@ -1,6 +1,6 @@
 <template>
   <div class="dropdown" :class="getDropdownClasses">
-    <portal to="overlay" v-if="items && items.length && visible">
+    <portal to="overlay" v-if="items && items.length && visible && !hidden">
       <div class="dropdown-overlay" v-if="visible" @click="close()"></div>
     </portal>
 

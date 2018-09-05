@@ -76,6 +76,14 @@ export default {
         comment,
         ...this.comments,
       ];
+    },
+    removeComment(comment) {
+      const commentIdx = this.comments.findIndex(c => c.id === comment.id);
+
+      this.comments = [
+        ...this.comments.slice(0, commentIdx),
+        ...this.comments.slice(commentIdx + 1)
+      ];
     }
   },
   components: {

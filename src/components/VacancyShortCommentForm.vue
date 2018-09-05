@@ -3,6 +3,7 @@
     <input
       type="text"
       name="commentText"
+      ref="commentText"
       v-model="commentText"
       @focus="commentTextFocused = true"
       @blur="commentTextFocused = false"
@@ -41,9 +42,14 @@ export default {
   props: ["comment", "onSave", "onCancel"],
   data() {
     return {
-      commentTextFocused: false,
+      commentTextFocused: !!this.comment,
       commentText: this.comment ? this.comment.comment : ""
     };
+  },
+  mounted() {
+    if (this.commentTextFocused) {
+      this.$refs.commentText.focus();
+    }
   },
   computed: {
     getFormClasses() {

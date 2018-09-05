@@ -85,6 +85,7 @@ export default {
 
 .vacancy-short-comment-form--edit {
   border: 0;
+  padding: 0;
 }
 
 .vacancy-short-comment-form__input {

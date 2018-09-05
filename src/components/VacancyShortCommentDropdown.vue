@@ -1,5 +1,5 @@
 <template>
-  <div class="vacancy-short-comment__dropdown">
+  <div class="vacancy-short-comment-dropdown">
     <Dropdown :items="items" />
   </div>
 </template>

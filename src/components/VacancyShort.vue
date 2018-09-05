@@ -20,20 +20,26 @@
     </header>
 
     <div class="vacancy-short-content">
-      <VacancyShortCommentForm v-bind:addComment="addComment" />
-      <VacancyShortComments v-bind:comments="comments" />
+      <VacancyShortCommentForm :onSave="addComment" />
+
+      <VacancyShortComments
+        :comments="comments"
+        :editComment="editComment"
+        :stopEditComment="stopEditComment"
+        :updateComment="updateComment"
+        :removeComment="removeComment" />
     </div>
   </div>
 </template>
 
 <script>
-import nanoid from "nanoid"
-import Button from "./Button.vue"
-import VacancyShortComments from "./VacancyShortComments.vue"
-import VacancyShortCommentForm from "./VacancyShortCommentForm.vue"
+import nanoid from "nanoid";
+import Button from "./Button.vue";
+import VacancyShortComments from "./VacancyShortComments.vue";
+import VacancyShortCommentForm from "./VacancyShortCommentForm.vue";
 
 export default {
-  name: 'VacancyShort',
+  name: "VacancyShort",
   data: () => ({
     currentUser: {
       id: 1,
@@ -72,9 +78,43 @@ export default {
         created_at: "12 июля"
       };
 
+      this.comments = [comment, ...this.comments];
+    },
+    editComment(comment) {
+      const commentIdx = this.comments.findIndex(c => c.id === comment.id);
+
       this.comments = [
-        comment,
-        ...this.comments,
+        ...this.comments.slice(0, commentIdx),
+        {
+          ...comment,
+          isEditing: true
+        },
+        ...this.comments.slice(commentIdx + 1)
+      ];
+    },
+    stopEditComment(comment) {
+      const commentIdx = this.comments.findIndex(c => c.id === comment.id);
+
+      this.comments = [
+        ...this.comments.slice(0, commentIdx),
+        {
+          ...comment,
+          isEditing: false
+        },
+        ...this.comments.slice(commentIdx + 1)
+      ];
+    },
+    updateComment(commentText, comment) {
+      const commentIdx = this.comments.findIndex(c => c.id === comment.id);
+
+      this.comments = [
+        ...this.comments.slice(0, commentIdx),
+        {
+          ...comment,
+          comment: commentText,
+          isEditing: false
+        },
+        ...this.comments.slice(commentIdx + 1)
       ];
     },
     removeComment(comment) {
@@ -89,55 +129,55 @@ export default {
   components: {
     Button,
     VacancyShortComments,
-    VacancyShortCommentForm,
+    VacancyShortCommentForm
   }
-}
+};
 </script>
 
 <style scoped>
-  .vacancy-short {
-    background-color: #FDFFEC;
-    border-left: 4px solid #7AC016;
-    border-radius: 3px;
-    padding: 15px 30px 20px 34px;
-    width: 504px;
-  }
+.vacancy-short {
+  background-color: #fdffec;
+  border-left: 4px solid #7ac016;
+  border-radius: 3px;
+  padding: 15px 30px 20px 34px;
+  width: 504px;
+}
 
-  .vacancy-short-header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-bottom: 9px;
-  }
+.vacancy-short-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 9px;
+}
 
-  .vacancy-short-header__side {
-    display: flex;
-    flex: 1;
-  }
+.vacancy-short-header__side {
+  display: flex;
+  flex: 1;
+}
 
-  .vacancy-short-header__side--left {
-    flex-direction: column;
-  }
+.vacancy-short-header__side--left {
+  flex-direction: column;
+}
 
-  .vacancy-short-header__side--right {
-    justify-content: flex-end;
-  }
+.vacancy-short-header__side--right {
+  justify-content: flex-end;
+}
 
-  .vacancy-short__current-step {
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 22px;
-    margin-top: 0;
-    margin-bottom: 6px;
-    color: #7AC016;
-  }
+.vacancy-short__current-step {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  margin-top: 0;
+  margin-bottom: 6px;
+  color: #7ac016;
+}
 
-  .vacancy-short__position-name {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 22px;
-    margin-top: 0;
-    margin-bottom: 0;
-    color: #7AC016;
-  }
+.vacancy-short__position-name {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #7ac016;
+}
 </style>

@@ -81,9 +81,11 @@ export default {
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
-  height: 10px;
-  width: 10px;
-  background-color: red;
+  width: 8px;
+  height: 4px;
+  background-image: url(../assets/icons/caret--down.svg);
+  background-size: cover;
+  background-position: center;
 }
 
 .dropdown__content {

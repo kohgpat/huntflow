@@ -61,6 +61,7 @@ export default {
 
 .dropdown {
   position: relative;
+  margin-left: 10px;
 }
 
 .dropdown--visible {
@@ -71,7 +72,8 @@ export default {
   cursor: pointer;
   line-height: 50px;
   padding-left: 10px;
-  padding-right: 50px;
+  padding-right: 10px;
+  padding-top: 20px;
   position: relative;
   text-overflow: ellipsis;
 }
@@ -82,7 +84,7 @@ export default {
   top: 50%;
   transform: translateY(-50%);
   width: 8px;
-  height: 4px;
+  height: 5px;
   background-image: url(../assets/icons/caret--down.svg);
   background-size: cover;
   background-position: center;

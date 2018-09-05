@@ -27,6 +27,8 @@
         :editComment="editComment"
         :stopEditComment="stopEditComment"
         :updateComment="updateComment"
+        :startRemoveComment="startRemoveComment"
+        :stopRemoveComment="stopRemoveComment"
         :removeComment="removeComment" />
     </div>
   </div>
@@ -113,6 +115,31 @@ export default {
           ...comment,
           comment: commentText,
           isEditing: false
+        },
+        ...this.comments.slice(commentIdx + 1)
+      ];
+    },
+    startRemoveComment(comment) {
+      const commentIdx = this.comments.findIndex(c => c.id === comment.id);
+
+      this.comments = [
+        ...this.comments.slice(0, commentIdx),
+        {
+          ...comment,
+          isEditing: false,
+          isDeleting: true
+        },
+        ...this.comments.slice(commentIdx + 1)
+      ];
+    },
+    stopRemoveComment(comment) {
+      const commentIdx = this.comments.findIndex(c => c.id === comment.id);
+
+      this.comments = [
+        ...this.comments.slice(0, commentIdx),
+        {
+          ...comment,
+          isDeleting: false
         },
         ...this.comments.slice(commentIdx + 1)
       ];

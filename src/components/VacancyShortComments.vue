@@ -23,9 +23,17 @@
           </span>
 
           <VacancyShortCommentDropdown
+            :hidden="comment.isDeleting"
             :comment="comment"
             :editComment="editComment"
+            :startRemoveComment="startRemoveComment"
+          />
+
+          <VacancyShortCommentDeleteConfirmModal
+            v-if="comment.isDeleting"
+            :comment="comment"
             :removeComment="removeComment"
+            :stopRemoveComment="stopRemoveComment"
           />
         </div>
       </div>
@@ -43,6 +51,7 @@
 <script>
 import VacancyShortCommentDropdown from "./VacancyShortCommentDropdown.vue";
 import VacancyShortCommentForm from "./VacancyShortCommentForm.vue";
+import VacancyShortCommentDeleteConfirmModal from "./VacancyShortCommentDeleteConfirmModal.vue";
 
 export default {
   name: "VacancyShortComments",
@@ -51,11 +60,14 @@ export default {
     "editComment",
     "stopEditComment",
     "updateComment",
+    "startRemoveComment",
+    "stopRemoveComment",
     "removeComment"
   ],
   components: {
     VacancyShortCommentDropdown,
-    VacancyShortCommentForm
+    VacancyShortCommentForm,
+    VacancyShortCommentDeleteConfirmModal
   }
 };
 </script>

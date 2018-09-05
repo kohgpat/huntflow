@@ -15,12 +15,14 @@ export default {
       items: [
         {
           name: "Редактировать",
+          button: true,
           handler: () => {
             this.editComment(this.comment);
           }
         },
         {
           name: "Удалить",
+          button: true,
           handler: () => {
             this.removeComment(this.comment);
           }

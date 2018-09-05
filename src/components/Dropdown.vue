@@ -13,7 +13,8 @@
     <div :class="getDropdownContentClasses" v-if="items && items.length">
       <ul class="dropdown__list">
         <li class="dropdown__item" v-for="item in items" v-bind:key="item.name">
-          <button type="button" class="dropdown__button" @click="item.handler">{{item.name}}</button>
+          <button type="button" class="dropdown__button" @click="item.handler" v-if="item.button">{{item.name}}</button>
+          <span class="dropdown__text" v-if="!item.button">{{item.name}}</span>
         </li>
       </ul>
     </div>
@@ -53,7 +54,6 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.1);
   z-index: 1;
   width: 100%;
   height: 100%;
@@ -90,10 +90,11 @@ export default {
   height: 0;
   opacity: 0;
   overflow: hidden;
-  padding: 15px 10px;
   transition: opacity 0.3s;
   visibility: hidden;
   background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
   position: absolute;
 }
 
@@ -106,5 +107,33 @@ export default {
 .dropdown__list {
   list-style: none;
   padding: 0;
+  width: 200px;
+}
+
+.dropdown__item {
+  padding: 14px 20px 15px;
+  width: 100%;
+  height: 50px;
+}
+
+.dropdown__item:not(:last-child) {
+  border-bottom: 1px solid #EBEBEB;
+}
+
+.dropdown__button {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.dropdown__button,
+.dropdown__text {
+  text-align: left;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 0;
 }
 </style>

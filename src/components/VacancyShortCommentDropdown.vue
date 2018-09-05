@@ -1,6 +1,6 @@
 <template>
   <div class="vacancy-short-comment-dropdown">
-    <Dropdown :items="items" />
+    <Dropdown :items="items" :hidden="hidden" />
   </div>
 </template>
 
@@ -9,7 +9,7 @@ import Dropdown from "./Dropdown.vue";
 
 export default {
   name: "VacancyShortCommentDropdown",
-  props: ["comment", "editComment", "removeComment"],
+  props: ["comment", "editComment", "startRemoveComment", "hidden"],
   data() {
     return {
       items: [
@@ -24,7 +24,7 @@ export default {
           name: "Удалить",
           button: true,
           handler: () => {
-            this.removeComment(this.comment);
+            this.startRemoveComment(this.comment);
           }
         }
       ]

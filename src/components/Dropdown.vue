@@ -24,15 +24,23 @@
 <script>
 export default {
   name: "Dropdown",
-  props: ["items"],
+  props: ["items", "hidden"],
   data: () => ({
     visible: false
   }),
   computed: {
     getDropdownContentClasses() {
-      return this.visible
-        ? "dropdown__content dropdown__content--visible"
-        : "dropdown__content";
+      let classes = ["dropdown__content"];
+
+      if (this.visible) {
+        classes.push("dropdown__content--visible");
+      }
+
+      if (this.hidden) {
+        classes.push("dropdown__content--hidden");
+      }
+
+      return classes;
     },
     getDropdownClasses() {
       return this.visible ? "dropdown dropdown--visible" : "dropdown";
@@ -106,6 +114,10 @@ export default {
   height: auto;
   opacity: 1;
   visibility: visible;
+}
+
+.dropdown__content--hidden {
+  visibility: hidden;
 }
 
 .dropdown__list {

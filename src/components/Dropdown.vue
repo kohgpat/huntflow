@@ -121,7 +121,7 @@ export default {
 }
 
 .dropdown__item:not(:last-child) {
-  border-bottom: 1px solid #EBEBEB;
+  border-bottom: 1px solid #ebebeb;
 }
 
 .dropdown__button {

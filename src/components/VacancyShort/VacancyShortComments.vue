@@ -3,7 +3,8 @@
     <li
       v-for="comment in comments"
       v-bind:key="comment.id"
-      class="vacancy-short-comments-list__item">
+      class="vacancy-short-comments-list__item"
+      tabindex="0">
       <div class="vacancy-short-comment" v-if="!comment.isEditing">
         <div class="vacancy-short-comment__comment">
           {{comment.comment}}

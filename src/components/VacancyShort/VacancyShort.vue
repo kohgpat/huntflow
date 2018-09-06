@@ -36,7 +36,7 @@
 
 <script>
 import nanoid from "nanoid";
-import Button from "./Button.vue";
+import Button from "../Button.vue";
 import VacancyShortComments from "./VacancyShortComments.vue";
 import VacancyShortCommentForm from "./VacancyShortCommentForm.vue";
 

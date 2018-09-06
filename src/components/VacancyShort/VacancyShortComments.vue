@@ -103,7 +103,7 @@ export default {
 .vacancy-short-comment-author__avatar {
   width: 18px;
   height: 18px;
-  background-image: url(../assets/icons/avatar.svg);
+  background-image: url(../../assets/icons/avatar.svg);
   background-size: cover;
   background-position: center;
   margin-right: 5px;

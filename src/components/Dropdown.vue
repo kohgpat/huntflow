@@ -20,7 +20,7 @@
             v-if="item.button">
             {{item.name}}
           </button>
-          
+
           <span
             class="dropdown__text"
             v-if="!item.button">

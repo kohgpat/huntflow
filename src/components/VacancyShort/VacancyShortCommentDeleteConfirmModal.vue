@@ -28,8 +28,8 @@
 </template>
 
 <script>
-import ConfirmModal from "./ConfirmModal.vue";
-import Button from "./Button.vue";
+import ConfirmModal from "../ConfirmModal.vue";
+import Button from "../Button.vue";
 
 export default {
   name: "VacancyShortCommentDeleteConfirmModal",

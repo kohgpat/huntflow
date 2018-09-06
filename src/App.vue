@@ -8,18 +8,20 @@
 </template>
 
 <script>
-import VacancyShort from './components/VacancyShort.vue'
+import VacancyShort from "./components/VacancyShort/VacancyShort.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
     VacancyShort
   }
-}
+};
 </script>
 
 <style>
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -29,7 +31,7 @@ html {
 }
 
 #app {
-  font-family: 'Raleway', 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Raleway", "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 1rem;
 }

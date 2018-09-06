@@ -1,5 +1,7 @@
 <template>
-  <div class="modal">
+  <div class="modal"
+    role="dialog"
+    aria-labelledby="confirmation-modal">
     <div class="modal__container">
       <div class="modal__content">
         <header class="modal__header">
@@ -23,28 +25,6 @@ import Button from "./Button.vue";
 
 export default {
   name: "ConfirmModal",
-  // props: ["items"],
-  // data: () => ({
-  //   visible: false
-  // }),
-  // computed: {
-  //   getDropdownContentClasses() {
-  //     return this.visible
-  //       ? "dropdown__content dropdown__content--visible"
-  //       : "dropdown__content";
-  //   },
-  //   getDropdownClasses() {
-  //     return this.visible ? "dropdown dropdown--visible" : "dropdown";
-  //   }
-  // },
-  // methods: {
-  //   toggleDropdown() {
-  //     this.visible = !this.visible;
-  //   },
-  //   close() {
-  //     this.visible = false;
-  //   }
-  // }
   components: {
     Button
   }

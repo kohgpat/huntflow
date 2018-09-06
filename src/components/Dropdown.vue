@@ -13,8 +13,19 @@
     <div :class="getDropdownContentClasses" v-if="items && items.length">
       <ul class="dropdown__list">
         <li class="dropdown__item" v-for="item in items" v-bind:key="item.name">
-          <button type="button" class="dropdown__button" @click="item.handler" v-if="item.button">{{item.name}}</button>
-          <span class="dropdown__text" v-if="!item.button">{{item.name}}</span>
+          <button
+            type="button"
+            class="dropdown__button"
+            @click="item.handler"
+            v-if="item.button">
+            {{item.name}}
+          </button>
+          
+          <span
+            class="dropdown__text"
+            v-if="!item.button">
+            {{item.name}}
+          </span>
         </li>
       </ul>
     </div>

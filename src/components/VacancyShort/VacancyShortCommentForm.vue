@@ -109,7 +109,7 @@ export default {
 }
 
 .vacancy-short-comment-form__controls {
-  margin-top: 3px;
+  margin-top: 7px;
 }
 
 .vacancy-short-comment-form__control:not(:last-child) {

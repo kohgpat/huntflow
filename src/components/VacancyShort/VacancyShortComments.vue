@@ -93,6 +93,7 @@ export default {
 .vacancy-short-comment__meta {
   display: flex;
   align-items: center;
+  margin-top: 1px;
 }
 
 .vacancy-short-comment-author {

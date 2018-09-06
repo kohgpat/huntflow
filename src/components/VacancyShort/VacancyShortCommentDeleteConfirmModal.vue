@@ -1,5 +1,7 @@
 <template>
-  <div class="vacancy-short-comment-delete-confirm-modal">
+  <div
+    class="vacancy-short-comment-delete-confirm-modal"
+    @keydown.esc="stopRemoveComment(comment)">
     <ConfirmModal>
       <h3
         slot="title"

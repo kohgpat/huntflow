@@ -25,6 +25,15 @@ import Button from "./Button.vue";
 
 export default {
   name: "ConfirmModal",
+  mounted() {
+    const focusableEls = this.$el.querySelectorAll(
+      'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex="0"]'
+    );
+
+    if (focusableEls && focusableEls.length) {
+      focusableEls[0].focus();
+    }
+  },
   components: {
     Button
   }

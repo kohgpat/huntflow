@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown should match the snapshot 1`] = `
+<div class="dropdown dropdown">
+  <!---->
+  <header class="dropdown__header"><i aria-hidden="true" class="dropdown__caret"></i></header>
+  <!---->
+</div>
+`;
+
+exports[`Dropdown should match the snapshot 2`] = `
+<div class="dropdown dropdown">
+  <!---->
+  <header class="dropdown__header"><i aria-hidden="true" class="dropdown__caret"></i></header>
+  <!---->
+</div>
+`;

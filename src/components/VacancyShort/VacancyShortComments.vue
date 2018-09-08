@@ -25,7 +25,7 @@
           <VacancyShortCommentDropdown
             :hidden="comment.isDeleting"
             :comment="comment"
-            :editComment="editComment"
+            :startEditComment="startEditComment"
             :startRemoveComment="startRemoveComment"
           />
 
@@ -57,7 +57,7 @@ export default {
   name: "VacancyShortComments",
   props: [
     "comments",
-    "editComment",
+    "startEditComment",
     "stopEditComment",
     "updateComment",
     "startRemoveComment",

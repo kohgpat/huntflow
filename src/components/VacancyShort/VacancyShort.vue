@@ -24,7 +24,7 @@
 
       <VacancyShortComments
         :comments="comments"
-        :editComment="editComment"
+        :startEditComment="startEditComment"
         :stopEditComment="stopEditComment"
         :updateComment="updateComment"
         :startRemoveComment="startRemoveComment"
@@ -82,7 +82,7 @@ export default {
 
       this.comments = [comment, ...this.comments];
     },
-    editComment(comment) {
+    startEditComment(comment) {
       const commentIdx = this.comments.findIndex(c => c.id === comment.id);
 
       this.comments = [

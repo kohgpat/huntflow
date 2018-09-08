@@ -82,12 +82,12 @@ describe("VacancyShortComments", () => {
         }
       }
     ];
-    const editComment = jest.fn();
+    const startEditComment = jest.fn();
 
     const vacancyShortComments = mount(VacancyShortComments, {
       propsData: {
         comments,
-        editComment
+        startEditComment
       }
     });
 
@@ -98,7 +98,7 @@ describe("VacancyShortComments", () => {
       .at(0)
       .trigger("click");
 
-    expect(editComment).toBeCalled();
+    expect(startEditComment).toBeCalled();
   });
 
   it("should be able to start comment deleting", () => {

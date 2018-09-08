@@ -9,7 +9,7 @@ import Dropdown from "../Dropdown.vue";
 
 export default {
   name: "VacancyShortCommentDropdown",
-  props: ["comment", "editComment", "startRemoveComment", "hidden"],
+  props: ["comment", "startEditComment", "startRemoveComment", "hidden"],
   data() {
     return {
       items: [
@@ -17,7 +17,7 @@ export default {
           name: "Редактировать",
           button: true,
           handler: () => {
-            this.editComment(this.comment);
+            this.startEditComment(this.comment);
           }
         },
         {
